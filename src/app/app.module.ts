@@ -1,18 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AceEditorModule } from 'ng2-ace-editor';
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
+import { FormsModule } from '@angular/forms';
 
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
+import { HttpClientModule } from '@angular/common/http'
 
-
-
-import { AppRoutingModule } from './app-routing.module';
+import { APP_ROUTING } from './app.router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { EditorComponent } from './components/editor/editor.component';
+import { ListaArchivosComponent } from './components/lista-archivos/lista-archivos.component';
+
 
 @NgModule({
   declarations: [
@@ -20,12 +23,16 @@ import { EditorComponent } from './components/editor/editor.component';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    EditorComponent
+    EditorComponent,
+    ListaArchivosComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    AceEditorModule,
+    APP_ROUTING,
+    CodemirrorModule,
+    FormsModule,
+    HttpClientModule,
+    SweetAlert2Module,
   ],
   providers: [],
   bootstrap: [AppComponent]

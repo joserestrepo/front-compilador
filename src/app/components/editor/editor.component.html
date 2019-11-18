@@ -1,1 +1,23 @@
-<ace-editor [(text)]="text" > </ace-editor>
+<div class="mt-5 pt-5">
+    <div class="row">
+        <div class="col">
+            <ngx-codemirror [(ngModel)]="text" [options]="{
+            lineNumbers: true,
+            theme: 'material',
+            mode: 'markdown',
+            lineWrapping: true
+          }"></ngx-codemirror>
+        </div>
+    </div>
+    <div class="row mt-2 justify-content-center">
+        <div class="col-2">
+            <button class="btn btn-primary" [routerLink]="['/listaArchivos']">Cargar</button>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-success" (click)="compilar()">Compilar</button>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-secondary" (click)="guardar()">Guardar</button>
+        </div>
+    </div>
+</div>
