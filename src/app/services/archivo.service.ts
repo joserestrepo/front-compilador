@@ -74,6 +74,14 @@ export class ArchivoService {
 
   public eliminarArchivo(id){
     return this.httpClient.delete(this.api.urlApi+'eliminarArchivo/'+id,{headers:this.header}).pipe( map( data =>{
+        if(data['eliminado']){
+          this.archivo = {
+            'id':0,
+            'id_user':0,
+            'nombreArchivo':"",
+            'texto':"",
+          }
+        }
         return data['eliminado'];
     }));
   }

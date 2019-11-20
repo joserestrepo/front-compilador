@@ -69,4 +69,14 @@ export class EditorComponent implements OnInit {
     
   }
 
+  nuevoArchivo(){
+    this.archivo_service.archivo = {
+      'id':0,
+      'id_user':0,
+      'nombreArchivo':"",
+      'texto':"",
+    };
+    this.text="";
+  }
+
 }

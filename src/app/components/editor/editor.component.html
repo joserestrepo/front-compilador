@@ -9,14 +9,17 @@
           }"></ngx-codemirror>
         </div>
     </div>
-    <div class="row mt-2 justify-content-center">
-        <div class="col-2">
+    <div class="row mt-2 text-center justify-content-center">
+        <div class="col-3">
+            <button class="btn btn-primary" (click)="nuevoArchivo()">Nuevo archivo</button>
+        </div>
+        <div class="col-3">
             <button class="btn btn-primary" [routerLink]="['/listaArchivos']">Cargar</button>
         </div>
-        <div class="col-2">
+        <div class="col-3">
             <button class="btn btn-success" (click)="compilar()">Compilar</button>
         </div>
-        <div class="col-2">
+        <div class="col-3">
             <button class="btn btn-secondary" (click)="guardar()">Guardar</button>
         </div>
     </div>
